@@ -1,17 +1,17 @@
-## MERN Context
+## MERN Stack App
 
-this is a MERN Stack Application CRUD with image upload using React Hook useContext
+MERN Stack App with React Hooks and Context API for Employee CRM
 
-### Considerations
+### Points to Consider
 
 * Backend: http://localhost:4000
 * Frontend: http://localhost:3000
 
 The frontend will be served from the backend in production, but in development it will be served using a proxy
 
-## Cloduinary
+## Cloudinary
 
-This application uses Cloudinary as Image Hosting, so you need to provide the following environment variables. You can find this on your Cloudinary's profile
+I have used Cloudinary for image hosting
 
 - CLOUD_NAME
 - API_KEY
