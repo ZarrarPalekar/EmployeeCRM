@@ -23,7 +23,6 @@ export const createEmployee = async (req, res) => {
         public_id: result.public_id,
       };
     }
-    console.log("dob pzj: ", dob)
     const newEmployee = new Employee({ name, age, email, dob, address, image });
     await newEmployee.save();
     return res.json(newEmployee);

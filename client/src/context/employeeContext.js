@@ -34,7 +34,6 @@ export const EmployeeProvider = ({ children }) => {
 
   const createEmployee = async (employee) => {
     try {
-      console.log("1 pzj: ", employee)
       const res = await createEmployeeRequest(employee);
       setEmployees([...employees, res.data]);
     } catch (error) {

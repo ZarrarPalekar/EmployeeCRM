@@ -23,6 +23,7 @@ export function EmployeeForm() {
     (async () => {
       if (params.id) {
         const employee = await getEmployee(params.id);
+        console.log(employee);
         setEmployee({
           name: employee.name,
           age: employee.age ? employee.age : "",
@@ -56,7 +57,6 @@ export function EmployeeForm() {
             if (params.id) {
               await updateEmployee(params.id, values);
             } else {
-              console.log("pzj: ", values);
               await createEmployee(values);
             }
             actions.resetForm();
