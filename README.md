@@ -11,7 +11,7 @@ The frontend will be served from the backend in production, but in development i
 
 ## Cloudinary
 
-I have used Cloudinary for image hosting
+I have used Cloudinary for image hosting using below secret keys
 
 - CLOUD_NAME
 - API_KEY
