@@ -1,0 +1,28 @@
+@api = http://localhost:4000/api/employees
+
+### get all employees
+GET {{api}}
+
+### create employee
+POST {{api}}
+Content-Type: application/json
+
+{
+  "title": "my first employee",
+  "description": "this is my first employee",
+  "image": "some image.url"
+}
+
+### get a single employee
+GET {{api}}/623a9e2e90e70485df76d487
+
+### update a single employee
+PUT {{api}}/623a9e2e90e70485df76d487
+Content-Type: application/json
+
+{
+"description": "some new image"
+}
+
+### delete a single employee
+DELETE {{api}}/623a9e2e90e70485df76d487
