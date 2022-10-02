@@ -28,7 +28,7 @@ export function EmployeeForm() {
           name: employee.name,
           age: employee.age ? employee.age : "",
           email: employee.email,
-          dob: employee.dob,
+          dob: employee.dob ? employee.dob : "",
           address: employee.address,
         });
       }
