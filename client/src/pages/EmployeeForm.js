@@ -5,6 +5,7 @@ import { useEmployees } from "../context/employeeContext";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { useEffect, useState } from "react";
+import "./styles.css";
 
 export function EmployeeForm() {
   const { createEmployee, getEmployee, updateEmployee } = useEmployees();
@@ -23,12 +24,14 @@ export function EmployeeForm() {
     (async () => {
       if (params.id) {
         const employee = await getEmployee(params.id);
-        console.log(employee);
+        let dateOfBirth = "";
+        if (employee.dob)
+          dateOfBirth = employee.dob.substr(0, employee.dob.indexOf("T"));
         setEmployee({
           name: employee.name,
           age: employee.age ? employee.age : "",
           email: employee.email,
-          dob: employee.dob ? employee.dob : "",
+          dob: dateOfBirth,
           address: employee.address,
         });
       }
@@ -126,12 +129,27 @@ export function EmployeeForm() {
               >
                 Employee Birth Date
               </label>
-              <input
-                type="date"
-                name="dob"
-                className="px-3 py-2 focus:outline-none rounded bg-gray-600 text-white w-full"
-                onChange={(e) => setFieldValue("dob", e.target.valueAsDate)}
-              />
+              <Field name="dob">
+                {({
+                  field, // { name, value, onChange, onBlur }
+                  form: { touched, errors }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
+                  meta,
+                }) => (
+                  <div>
+                    <input
+                      className="px-3 py-2 focus:outline-none rounded bg-gray-600 text-white w-full"
+                      type="date"
+                      name="dob"
+                      id="dob"
+                      {...field}
+                    />
+                    {meta.touched && meta.error && (
+                      <div className="error">{meta.error}</div>
+                    )}
+                  </div>
+                )}
+              </Field>
+
               <ErrorMessage
                 component="p"
                 name="dob"
