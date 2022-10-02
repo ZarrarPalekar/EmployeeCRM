@@ -25,7 +25,7 @@ export function EmployeeForm() {
         const employee = await getEmployee(params.id);
         setEmployee({
           name: employee.name,
-          age: employee.age,
+          age: employee.age ? employee.age : "",
           email: employee.email,
           dob: employee.dob,
           address: employee.address,
