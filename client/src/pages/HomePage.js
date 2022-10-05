@@ -32,7 +32,7 @@ export function HomePage() {
         </h1>
         <Link
           to="/new"
-          className="bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-500"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         >
           Create Employee
         </Link>

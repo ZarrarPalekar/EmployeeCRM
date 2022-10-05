@@ -43,10 +43,11 @@ export function EmployeeForm() {
       <div className="bg-zinc-800 p-10 shadow-md shadow-black">
         <header className="flex justify-between items-center py-4 text-white">
           <h3 className="text-xl">New Employee</h3>
-          <Link to="/">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              Go Back
-            </button>
+          <Link
+            to="/"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Go Back
           </Link>
         </header>
         <Formik
